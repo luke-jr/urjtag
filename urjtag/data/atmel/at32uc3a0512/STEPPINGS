@@ -1,7 +1,7 @@
 #
-# $Id$
+# $Id: STEPPINGS 1487 2009-04-08 21:07:12Z arniml $
 #
-# Copyright (C) 2002 ETC s.r.o.
+# Copyright (c) 2008 Gabor Juhos <juhosg@openwrt.org>
 #
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -18,33 +18,21 @@
 # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
 # 02111-1307, USA.
 #
-# Written by Marcel Telka <marcel@telka.sk>, 2002.
+# Documentation:
+# [1] Atmel Corporation, "AT32AP7000 - High Performance, Low Power
+#     AVR(R)32 32-Bit Microcontroller", Rev. 32003K-AVR32-10/07
 #
 
-include $(top_srcdir)/Makefile.rules
-
-noinst_LTLIBRARIES = libflash.la
-
-libflash_la_SOURCES = \
-	amd.c \
-	amd.h \
-	avr32.c \
-	avr32.h \
-	amd_flash.c \
-	cfi.c \
-	cfi.h \
-	detectflash.c \
-	flash.c \
-	flash.h \
-	intel.c \
-	intel.h \
-	jedec.c \
-	jedec.h \
-	mic.h
-
-if JEDEC_EXP
-libflash_la_SOURCES += \
-	jedec_exp.c
-endif
-
-AM_CFLAGS = $(WARNINGCFLAGS)
+# bits 31-28 of the Device Identification Register
+# see Table 38-11 in [1]
+0000	at32uc3a0512	A
+0001	at32uc3a0512	B
+0010	at32uc3a0512	C
+0011	at32uc3a0512	D
+0101	at32uc3a0512	E
+0110	at32uc3a0512	F
+0111	at32uc3a0512	G
+1000	at32uc3a0512	H
+1001	at32uc3a0512	I
+1010	at32uc3a0512	J
+1011	at32uc3a0512	K

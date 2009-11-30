@@ -312,6 +312,9 @@ urj_flashmem (urj_bus_t *bus, FILE *f, uint32_t addr, int noverify)
     set_flash_driver ();
     if (!urj_flash_cfi_array || !flash_driver)
     {
+    	if(urj_flash_avr32_autodetect(bus)){
+		return urj_flash_avr32_flashmem(bus,f,addr,noverify);
+	}
         urj_error_set (URJ_ERROR_NOTFOUND, _("no flash driver found"));
         return URJ_STATUS_FAIL;
     }

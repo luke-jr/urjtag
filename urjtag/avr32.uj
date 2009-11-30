@@ -1,0 +1,22 @@
+cable jtagkey
+reset
+detect
+initbus avr32 HSBU
+
+instruction AVR_RESET
+dr 11111
+shift ir
+shift dr
+shift dr
+dr 00000
+shift ir
+shift dr
+shift dr
+
+instruction HALT
+dr 1
+shift ir
+shift dr
+shift dr
+
+flashmem 0 cc.bin
