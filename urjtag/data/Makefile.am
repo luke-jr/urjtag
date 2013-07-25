@@ -52,6 +52,8 @@ nobase_dist_pkgdata_DATA = \
 	atmel/PARTS \
 	atmel/at32ap7000/STEPPINGS \
 	atmel/at32ap7000/at32ap7000 \
+	atmel/at32uc3a/STEPPINGS \
+	atmel/at32uc3a/at32uc3a \
 	atmel/atmega128/STEPPINGS \
 	atmel/atmega128/atmega128 \
 	atmel/at91sam7s256/STEPPINGS \
